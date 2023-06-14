@@ -1,2 +1,2 @@
 #!/bin/bash
-echo {a..n}{a..z} {p..z}{a..z} | tr -d "oo"
+for ((i=97; i<=122; i++)); do for ((j=97; j<=122; j++)); do [[ $(printf "%b" "$(printf "%o" $i)\n$(printf "%o" $j)") != oo ]] && printf "%b" "$(printf "\\$(printf "%o" $i)\\$(printf "%o" $j)\n")"; done; done
