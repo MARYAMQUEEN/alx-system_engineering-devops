@@ -1,2 +1,2 @@
 #!/bin/bash
-compgen -v; compgen -e; compgen -A function
+set | grep -v '^_' | awk -F= '/^[a-zA-Z_][a-zA-Z0-9_]*=/ {print $1}'
